@@ -1,0 +1,780 @@
+Binary file cscope.in.out matches
+cscope.out:	@inc/syscall.h
+cscope.out:	@kern/syscall.c
+cscope.out:	@kern/syscall.h
+cscope.out:	@lib/syscall.c
+cscope.out:inc/syscall.h
+cscope.out:kern/syscall.c
+cscope.out:kern/syscall.h
+cscope.out:lib/syscall.c
+inc/lib.h:#include <inc/syscall.h>
+inc/lib.h:// syscall.c
+kern/syscall.h:#include <inc/syscall.h>
+kern/syscall.h:int32_t syscall(uint32_t num, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5);
+kern/pmap.c:// can be used to verify page permissions for syscall arguments,
+kern/Makefrag:			kern/syscall.c \
+kern/trapentry.S:TRAPHANDLER_NOEC(syscall_entry,T_SYSCALL);
+kern/syscall.c:#include <kern/syscall.h>
+kern/syscall.c:syscall(uint32_t syscallno, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)
+kern/syscall.c:	// Call the function corresponding to the 'syscallno' parameter.
+kern/syscall.c:    	switch(syscallno)
+kern/trap.c:#include <kern/syscall.h>
+kern/trap.c:    extern void syscall_entry();
+kern/trap.c:    SETGATE(idt[T_SYSCALL],1, GD_KT, syscall_entry, 3);
+kern/trap.c:		    syscall(
+lib/Makefrag:			lib/syscall.c
+lib/syscall.c:#include <inc/syscall.h>
+lib/syscall.c:syscall(int num, int check, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)
+lib/syscall.c:		panic("syscall %d returned %d (> 0)", num, ret);
+lib/syscall.c:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+lib/syscall.c:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+lib/syscall.c:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+lib/syscall.c:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+lib/syscall.c:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+lib/syscall.c:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+lib/syscall.c:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+lib/syscall.c:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+lib/syscall.c:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+lib/syscall.c:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+lib/syscall.c:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+lib/syscall.c:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+Binary file obj/lib/fork.o matches
+Binary file obj/lib/libjos.a matches
+Binary file obj/lib/console.o matches
+Binary file obj/lib/panic.o matches
+Binary file obj/lib/libmain.o matches
+Binary file obj/lib/pgfault.o matches
+Binary file obj/lib/ipc.o matches
+Binary file obj/lib/syscall.o matches
+Binary file obj/lib/printf.o matches
+Binary file obj/lib/exit.o matches
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/queue.h inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/queue.h inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps:obj/lib/syscall.o: lib/syscall.c inc/syscall.h inc/lib.h inc/types.h \
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps:obj/kern/syscall.o: kern/syscall.c inc/x86.h inc/types.h inc/error.h \
+obj/.deps: kern/syscall.h inc/syscall.h kern/console.h kern/sched.h
+obj/.deps: inc/queue.h inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/queue.h inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/queue.h inc/trap.h inc/memlayout.h inc/mmu.h inc/syscall.h
+obj/.deps: inc/env.h kern/syscall.h inc/syscall.h kern/sched.h kern/kclock.h \
+Binary file obj/kern/kernel matches
+obj/kern/kernel.asm:    extern void syscall_entry();
+obj/kern/kernel.asm:    SETGATE(idt[T_SYSCALL],1, GD_KT, syscall_entry, 3);
+obj/kern/kernel.asm:		    syscall(
+obj/kern/kernel.asm:f0103c55:	e8 86 01 00 00       	call   f0103de0 <syscall>
+obj/kern/kernel.asm:f0103d2e <syscall_entry>:
+obj/kern/kernel.asm:TRAPHANDLER_NOEC(syscall_entry,T_SYSCALL);
+obj/kern/kernel.asm:f0103de0 <syscall>:
+obj/kern/kernel.asm:syscall(uint32_t syscallno, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)
+obj/kern/kernel.asm:	// Call the function corresponding to the 'syscallno' parameter.
+obj/kern/kernel.asm:    	switch(syscallno)
+obj/kern/kernel.asm:f0103e00:	0f 87 7c 03 00 00    	ja     f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103e43:	e9 3a 03 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103e50:	e9 2d 03 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103e5d:	e9 20 03 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103e7d:	0f 88 ff 02 00 00    	js     f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103e8e:	75 15                	jne    f0103ea5 <syscall+0xc5>
+obj/kern/kernel.asm:f0103ea3:	eb 1a                	jmp    f0103ebf <syscall+0xdf>
+obj/kern/kernel.asm:f0103ecf:	e9 ae 02 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103ee4:	0f 87 98 02 00 00    	ja     f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103f05:	0f 85 77 02 00 00    	jne    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103f11:	e9 6c 02 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103f31:	0f 88 4b 02 00 00    	js     f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103f84:	e9 f9 01 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103f94:	75 08                	jne    f0103f9e <syscall+0x1be>
+obj/kern/kernel.asm:f0103f9c:	76 0a                	jbe    f0103fa8 <syscall+0x1c8>
+obj/kern/kernel.asm:f0103fa3:	e9 da 01 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103fc5:	0f 85 b7 01 00 00    	jne    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0103fda:	0f 88 a2 01 00 00    	js     f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0104004:	79 10                	jns    f0104016 <syscall+0x236>
+obj/kern/kernel.asm:f0104011:	e9 6c 01 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0104033:	e9 4a 01 00 00       	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0104043:	0f 85 c2 00 00 00    	jne    f010410b <syscall+0x32b>
+obj/kern/kernel.asm:f010404f:	0f 87 b6 00 00 00    	ja     f010410b <syscall+0x32b>
+obj/kern/kernel.asm:f010405b:	0f 85 aa 00 00 00    	jne    f010410b <syscall+0x32b>
+obj/kern/kernel.asm:f0104068:	0f 87 9d 00 00 00    	ja     f010410b <syscall+0x32b>
+obj/kern/kernel.asm:f0104075:	0f 85 90 00 00 00    	jne    f010410b <syscall+0x32b>
+obj/kern/kernel.asm:f0104094:	78 7c                	js     f0104112 <syscall+0x332>
+obj/kern/kernel.asm:f01040b2:	78 5e                	js     f0104112 <syscall+0x332>
+obj/kern/kernel.asm:f01040cf:	74 3a                	je     f010410b <syscall+0x32b>
+obj/kern/kernel.asm:f01040d7:	74 09                	je     f01040e2 <syscall+0x302>
+obj/kern/kernel.asm:f01040e0:	74 29                	je     f010410b <syscall+0x32b>
+obj/kern/kernel.asm:f0104109:	eb 77                	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0104110:	eb 70                	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0104117:	eb 69                	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0104134:	78 4c                	js     f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f010413c:	77 21                	ja     f010415f <syscall+0x37f>
+obj/kern/kernel.asm:f0104144:	75 19                	jne    f010415f <syscall+0x37f>
+obj/kern/kernel.asm:f010415d:	eb 23                	jmp    f0104182 <syscall+0x3a2>
+obj/kern/kernel.asm:f0104164:	eb 1c                	jmp    f0104182 <syscall+0x3a2>
+Binary file obj/kern/trap.o matches
+obj/kern/kernel.sym:f0103d2e T syscall_entry
+obj/kern/kernel.sym:f0103de0 T syscall
+Binary file obj/kern/trapentry.o matches
+Binary file obj/kern/syscall.o matches
+Binary file obj/kern/kernel.img matches
+obj/user/faultbadhandler.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultbadhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultbadhandler.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultbadhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultbadhandler.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultbadhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultbadhandler.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultbadhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultbadhandler.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultbadhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultbadhandler.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultbadhandler.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultbadhandler.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultbadhandler.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultbadhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultbadhandler.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/faultalloc.o matches
+Binary file obj/user/faultnostack matches
+Binary file obj/user/forktree.o matches
+Binary file obj/user/pingpong.o matches
+obj/user/pingpongs.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/pingpongs.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/pingpongs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpongs.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/pingpongs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpongs.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/pingpongs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpongs.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/pingpongs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpongs.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/pingpongs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpongs.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/pingpongs.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/pingpongs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpongs.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/pingpongs.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/pingpongs.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/pingpongs.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/pingpongs.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/pingpongs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpongs.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/faultbadhandler.o matches
+Binary file obj/user/forktree matches
+Binary file obj/user/fairness.o matches
+obj/user/dumbfork.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/dumbfork.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/dumbfork.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/dumbfork.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/dumbfork.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/dumbfork.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/dumbfork.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/dumbfork.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/dumbfork.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/dumbfork.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/dumbfork.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/dumbfork.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/dumbfork.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/dumbfork.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/dumbfork.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/dumbfork.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/dumbfork.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/dumbfork.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/dumbfork.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/dumbfork.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/dumbfork.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/dumbfork.o matches
+Binary file obj/user/yield.o matches
+Binary file obj/user/spin matches
+obj/user/faultwrite.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultwrite.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultwrite.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultwrite.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultwrite.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultwrite.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultwrite.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultwrite.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultwrite.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultwrite.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultwrite.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultwrite.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultwrite.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultwrite.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultwrite.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultwrite.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultwrite.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultwrite.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultwrite.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultwrite.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultwrite.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/fairness matches
+Binary file obj/user/faultregs matches
+Binary file obj/user/pingpong matches
+Binary file obj/user/idle.o matches
+obj/user/faultread.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultread.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultread.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultread.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultread.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultread.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultread.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultread.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultread.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultread.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultread.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultread.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultread.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultread.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultread.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultread.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultread.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultread.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultread.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultread.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultread.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultread.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/primes matches
+obj/user/faultnostack.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultnostack.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultnostack.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultnostack.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultnostack.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultnostack.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultnostack.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultnostack.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultnostack.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultnostack.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultnostack.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultnostack.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultnostack.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultnostack.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultnostack.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultnostack.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultnostack.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultnostack.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultnostack.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultnostack.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultnostack.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/idle matches
+obj/user/forktree.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/forktree.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/forktree.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/forktree.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/forktree.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/forktree.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/forktree.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/forktree.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/forktree.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/forktree.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/forktree.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/forktree.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/forktree.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/forktree.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/forktree.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/forktree.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/forktree.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/forktree.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/forktree.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/forktree.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/forktree.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/forktree.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/yield matches
+obj/user/yield.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/yield.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/yield.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/yield.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/yield.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/yield.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/yield.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/yield.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/yield.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/yield.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/yield.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/yield.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/yield.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/yield.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/yield.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/yield.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/yield.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/yield.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/yield.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/yield.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/yield.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/yield.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/pingpongs matches
+obj/user/fairness.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/fairness.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/fairness.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/fairness.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/fairness.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/fairness.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/fairness.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/fairness.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/fairness.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/fairness.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/fairness.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/fairness.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/fairness.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/fairness.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/fairness.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/fairness.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/fairness.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/fairness.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/fairness.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/fairness.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/fairness.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/fairness.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/faultevilhandler.o matches
+Binary file obj/user/faultdie matches
+obj/user/faultallocbad.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultallocbad.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultallocbad.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultallocbad.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultallocbad.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultallocbad.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultallocbad.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultallocbad.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultallocbad.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultallocbad.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultallocbad.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultallocbad.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultallocbad.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultallocbad.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultallocbad.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultallocbad.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/hello.o matches
+obj/user/spin.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/spin.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/spin.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/spin.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/spin.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/spin.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/spin.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/spin.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/spin.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/spin.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/spin.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/spin.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/spin.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/spin.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/spin.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/spin.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/spin.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/spin.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/spin.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/spin.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/spin.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/spin.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/faultallocbad matches
+Binary file obj/user/faultnostack.o matches
+Binary file obj/user/spin.o matches
+Binary file obj/user/faultevilhandler matches
+obj/user/primes.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/primes.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/primes.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/primes.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/primes.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/primes.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/primes.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/primes.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/primes.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/primes.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/primes.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/primes.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/primes.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/primes.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/primes.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/primes.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/primes.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/primes.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/primes.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/primes.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/primes.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/primes.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/hello matches
+obj/user/faultevilhandler.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultevilhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultevilhandler.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultevilhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultevilhandler.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultevilhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultevilhandler.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultevilhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultevilhandler.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultevilhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultevilhandler.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultevilhandler.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultevilhandler.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultevilhandler.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultevilhandler.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultevilhandler.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultdie.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultdie.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultdie.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultdie.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultdie.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultdie.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultdie.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultdie.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultdie.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultdie.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultdie.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultdie.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultdie.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultdie.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultdie.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultdie.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultdie.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultdie.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultdie.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultdie.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultdie.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultdie.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/hello.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/hello.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/hello.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/hello.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/hello.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/hello.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/hello.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/hello.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/hello.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/hello.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/hello.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/hello.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/hello.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/hello.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/hello.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/hello.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/hello.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/hello.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/hello.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/hello.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/hello.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/hello.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/primes.o matches
+Binary file obj/user/faultallocbad.o matches
+Binary file obj/user/faultregs.o matches
+Binary file obj/user/dumbfork matches
+Binary file obj/user/faultalloc matches
+Binary file obj/user/faultdie.o matches
+Binary file obj/user/faultwrite.o matches
+obj/user/pingpong.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/pingpong.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/pingpong.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpong.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/pingpong.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/pingpong.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpong.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/pingpong.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpong.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/pingpong.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpong.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/pingpong.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpong.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/pingpong.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/pingpong.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpong.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/pingpong.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/pingpong.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/pingpong.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/pingpong.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/pingpong.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/pingpong.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/faultbadhandler matches
+Binary file obj/user/faultwrite matches
+obj/user/idle.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/idle.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/idle.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/idle.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/idle.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/idle.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/idle.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/idle.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/idle.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/idle.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/idle.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/idle.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/idle.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/idle.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/idle.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/idle.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/idle.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/idle.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/idle.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/idle.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/idle.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/idle.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultalloc.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultalloc.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultalloc.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultalloc.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultalloc.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultalloc.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultalloc.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultalloc.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultalloc.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultalloc.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultalloc.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultalloc.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultalloc.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultalloc.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultalloc.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultalloc.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultalloc.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultalloc.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultalloc.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultalloc.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultalloc.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultregs.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultregs.asm:	syscall(SYS_cputs, 0, (uint32_t)s, len, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultregs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultregs.asm:	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_ipc_try_send, 0, envid, value, (uint32_t) srcva, perm, 0);
+obj/user/faultregs.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultregs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultregs.asm:	return syscall(SYS_env_set_pgfault_upcall, 1, envid, (uint32_t) upcall, 0, 0, 0);
+obj/user/faultregs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultregs.asm:	return syscall(SYS_env_set_status, 1, envid, status, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultregs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultregs.asm:	return syscall(SYS_page_unmap, 1, envid, (uint32_t) va, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultregs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultregs.asm:	return syscall(SYS_page_map, 1, srcenv, (uint32_t) srcva, dstenv, (uint32_t) dstva, perm);
+obj/user/faultregs.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultregs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultregs.asm:	return syscall(SYS_page_alloc, 1, envid, (uint32_t) va, perm, 0, 0);
+obj/user/faultregs.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultregs.asm:	syscall(SYS_yield, 0, 0, 0, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+obj/user/faultregs.asm:	 return syscall(SYS_getenvid, 0, 0, 0, 0, 0, 0);
+obj/user/faultregs.asm:	return syscall(SYS_cgetc, 0, 0, 0, 0, 0, 0);
+obj/user/faultregs.asm:		panic("syscall %d returned %d (> 0)", num, ret);
+obj/user/faultregs.asm:	return syscall(SYS_env_destroy, 1, envid, 0, 0, 0, 0);
+Binary file obj/user/faultread matches
+Binary file obj/user/faultread.o matches
+Binary file obj/user/pingpongs.o matches
+tags:JOS_INC_SYSCALL_H	inc/syscall.h	2;"	d
+tags:JOS_KERN_SYSCALL_H	kern/syscall.h	2;"	d
+tags:NSYSCALLS	inc/syscall.h	/^	NSYSCALLS$/;"	e	enum:__anon2
+tags:SYS_cgetc	inc/syscall.h	/^	SYS_cgetc,$/;"	e	enum:__anon2
+tags:SYS_cputs	inc/syscall.h	/^	SYS_cputs = 0,$/;"	e	enum:__anon2
+tags:SYS_env_destroy	inc/syscall.h	/^	SYS_env_destroy,$/;"	e	enum:__anon2
+tags:SYS_env_set_pgfault_upcall	inc/syscall.h	/^	SYS_env_set_pgfault_upcall,$/;"	e	enum:__anon2
+tags:SYS_env_set_status	inc/syscall.h	/^	SYS_env_set_status,$/;"	e	enum:__anon2
+tags:SYS_exofork	inc/syscall.h	/^	SYS_exofork,$/;"	e	enum:__anon2
+tags:SYS_getenvid	inc/syscall.h	/^	SYS_getenvid,$/;"	e	enum:__anon2
+tags:SYS_ipc_recv	inc/syscall.h	/^	SYS_ipc_recv,$/;"	e	enum:__anon2
+tags:SYS_ipc_try_send	inc/syscall.h	/^	SYS_ipc_try_send,$/;"	e	enum:__anon2
+tags:SYS_page_alloc	inc/syscall.h	/^	SYS_page_alloc,$/;"	e	enum:__anon2
+tags:SYS_page_map	inc/syscall.h	/^	SYS_page_map,$/;"	e	enum:__anon2
+tags:SYS_page_unmap	inc/syscall.h	/^	SYS_page_unmap,$/;"	e	enum:__anon2
+tags:SYS_yield	inc/syscall.h	/^	SYS_yield,$/;"	e	enum:__anon2
+tags:f0103cb0	obj/kern/kernel.asm	/^f0103cb0:	e8 7b 01 00 00       	call   f0103e30 <syscall>$/;"	l
+tags:f0103d8a	obj/kern/kernel.asm	/^f0103d8a <syscall_entry>:$/;"	l
+tags:f0103e30	obj/kern/kernel.asm	/^f0103e30 <syscall>:$/;"	l
+tags:f0103e48	obj/kern/kernel.asm	/^f0103e48:	0f 87 cc 00 00 00    	ja     f0103f1a <syscall+0xea>$/;"	l
+tags:f0103e8b	obj/kern/kernel.asm	/^f0103e8b:	e9 8f 00 00 00       	jmp    f0103f1f <syscall+0xef>$/;"	l
+tags:f0103e95	obj/kern/kernel.asm	/^f0103e95:	e9 85 00 00 00       	jmp    f0103f1f <syscall+0xef>$/;"	l
+tags:f0103ea2	obj/kern/kernel.asm	/^f0103ea2:	eb 7b                	jmp    f0103f1f <syscall+0xef>$/;"	l
+tags:f0103ec5	obj/kern/kernel.asm	/^f0103ec5:	78 58                	js     f0103f1f <syscall+0xef>$/;"	l
+tags:f0103ed2	obj/kern/kernel.asm	/^f0103ed2:	75 15                	jne    f0103ee9 <syscall+0xb9>$/;"	l
+tags:f0103ee7	obj/kern/kernel.asm	/^f0103ee7:	eb 1a                	jmp    f0103f03 <syscall+0xd3>$/;"	l
+tags:f0103f13	obj/kern/kernel.asm	/^f0103f13:	eb 0a                	jmp    f0103f1f <syscall+0xef>$/;"	l
+tags:sys_cgetc	kern/syscall.c	/^sys_cgetc(void)$/;"	f	file:
+tags:sys_cgetc	lib/syscall.c	/^sys_cgetc(void)$/;"	f
+tags:sys_cputs	kern/syscall.c	/^sys_cputs(const char *s, size_t len)$/;"	f	file:
+tags:sys_cputs	lib/syscall.c	/^sys_cputs(const char *s, size_t len)$/;"	f
+tags:sys_env_destroy	kern/syscall.c	/^sys_env_destroy(envid_t envid)$/;"	f	file:
+tags:sys_env_destroy	lib/syscall.c	/^sys_env_destroy(envid_t envid)$/;"	f
+tags:sys_env_set_pgfault_upcall	kern/syscall.c	/^sys_env_set_pgfault_upcall(envid_t envid, void *func)$/;"	f	file:
+tags:sys_env_set_pgfault_upcall	lib/syscall.c	/^sys_env_set_pgfault_upcall(envid_t envid, void *upcall)$/;"	f
+tags:sys_env_set_status	kern/syscall.c	/^sys_env_set_status(envid_t envid, int status)$/;"	f	file:
+tags:sys_env_set_status	lib/syscall.c	/^sys_env_set_status(envid_t envid, int status)$/;"	f
+tags:sys_exofork	kern/syscall.c	/^sys_exofork(void)$/;"	f	file:
+tags:sys_getenvid	kern/syscall.c	/^sys_getenvid(void)$/;"	f	file:
+tags:sys_getenvid	lib/syscall.c	/^sys_getenvid(void)$/;"	f
+tags:sys_ipc_recv	kern/syscall.c	/^sys_ipc_recv(void *dstva)$/;"	f	file:
+tags:sys_ipc_recv	lib/syscall.c	/^sys_ipc_recv(void *dstva)$/;"	f
+tags:sys_ipc_try_send	kern/syscall.c	/^sys_ipc_try_send(envid_t envid, uint32_t value, void *srcva, unsigned perm)$/;"	f	file:
+tags:sys_ipc_try_send	lib/syscall.c	/^sys_ipc_try_send(envid_t envid, uint32_t value, void *srcva, int perm)$/;"	f
+tags:sys_page_alloc	kern/syscall.c	/^sys_page_alloc(envid_t envid, void *va, int perm)$/;"	f	file:
+tags:sys_page_alloc	lib/syscall.c	/^sys_page_alloc(envid_t envid, void *va, int perm)$/;"	f
+tags:sys_page_map	kern/syscall.c	/^sys_page_map(envid_t srcenvid, void *srcva,$/;"	f	file:
+tags:sys_page_map	lib/syscall.c	/^sys_page_map(envid_t srcenv, void *srcva, envid_t dstenv, void *dstva, int perm)$/;"	f
+tags:sys_page_unmap	kern/syscall.c	/^sys_page_unmap(envid_t envid, void *va)$/;"	f	file:
+tags:sys_page_unmap	lib/syscall.c	/^sys_page_unmap(envid_t envid, void *va)$/;"	f
+tags:sys_yield	kern/syscall.c	/^sys_yield(void)$/;"	f	file:
+tags:sys_yield	lib/syscall.c	/^sys_yield(void)$/;"	f
+tags:syscall	kern/syscall.c	/^syscall(uint32_t syscallno, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)$/;"	f
+tags:syscall	lib/syscall.c	/^syscall(int num, int check, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)$/;"	f	file:

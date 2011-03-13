@@ -1,0 +1,75 @@
+****beginning:
+addl $8, %esp
+
+UXSTACKTOP:                             USSTACKTOP:
+        utf_esp ------------------------        (ADDR0)
+        utf_eflags                      \       (ADDR1)
+        utf_eip                          \      (ADDR2)
+        utf_regs <____current_ESP         \---->(ADDR3)
+        utf_err                                 (ADDR4)
+utf_fault_va                            (ADDR5)
+
+        ****step1:
+        movl 40(%esp),%eax
+        movl 48(%esp),%ebx
+movl eax,-4(%ebx)
+
+        UXSTACKTOP:                             USSTACKTOP:
+        utf_esp ------------------------        (ADDR0)
+        utf_eflags                      \       (ADDR1)
+        utf_eip                          \      (ADDR2)
+        utf_regs <____current_ESP         \---->(ADDR3)
+        utf_err                                 (utf_eip)
+utf_fault_va                            (ADDR5)
+
+
+        ****step2:
+        popal
+
+        UXSTACKTOP:                             USSTACKTOP:
+        utf_esp ------------------------        (ADDR0)
+        utf_eflags                      \       (ADDR1)
+        utf_eip  <____current_ESP        \      (ADDR2)
+        utf_regs                          \---->(ADDR3)
+        utf_err                                 (utf_eip)
+utf_fault_va                            (ADDR5)
+
+        ****step3:
+        addl $4,esp
+        popfl
+        SAME AS step2
+
+        UXSTACKTOP:                             USSTACKTOP:
+        utf_esp (<____current_ESP)------        (ADDR0)
+        utf_eflags                      \       (ADDR1)
+        utf_eip                          \      (ADDR2)
+        utf_regs                          \---->(ADDR3)
+        utf_err                                 (utf_eip)
+utf_fault_va                            (ADDR5)
+
+        ****step4
+        popl %esp  (current_ESP = utf_esp)
+subl $4,%esp(switch to USSTACKTOP)
+
+        UXSTACKTOP:                             USSTACKTOP:
+        utf_esp ------------------------       (ADDR0)
+        utf_eflags                      \       (ADDR1)
+        utf_eip                          \      (ADDR2)
+        utf_regs                          \---->(ADDR3)
+        utf_err                                 (utf_eip)(<____current_ESP)
+utf_fault_va                            (ADDR5)
+
+        ****step5
+        ret
+
+        UXSTACKTOP:                             USSTACKTOP:
+        utf_esp ------------------------       (ADDR0)
+        utf_eflags                      \       (ADDR1)
+        utf_eip                          \      (ADDR2)
+        utf_regs                          \---->(ADDR3)(<____current_ESP)
+        utf_err                                 (utf_eip)
+utf_fault_va                            (ADDR5)
+
+        //popl utf_eip 
+        //run instruction from UTF_EIP;
+
